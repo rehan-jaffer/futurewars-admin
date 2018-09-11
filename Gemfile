@@ -6,8 +6,10 @@ git_source(:github) do |repo_name|
 end
 
 gem 'webpacker'
-gem 'dotenv'
+gem 'dotenv-rails'
 gem 'graphql'
+gem 'mysql2' 
+gem 'rails_event_store'
 
 group :test do
   gem 'rspec-rails'
