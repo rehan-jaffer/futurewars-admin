@@ -4,10 +4,24 @@ module Types
     # They will be entry points for queries on your schema.
 
     # TODO: remove me
-    field :test_field, String, null: false,
-      description: "An example field added by the generator"
-    def test_field
-      "Hello World!"
-    end
+      field :allSectors, type: Types::SectorType, null: false do
+#        type types[Types::SectorType]
+        description "All the sectors"
+
+      end
+
+      def all_sectors
+        Sector.all
+      end
+
+      field :sector, type: Types::SectorType, null: false do
+        description "Return a sector"
+        argument :id, ID, required: true
+      end
+
+      def sector(id)
+        Sector.find(id)
+      end
+
   end
 end
