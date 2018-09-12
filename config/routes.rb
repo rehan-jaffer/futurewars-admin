@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
   end
 
+  root to: "static#home"
+
   namespace :api do
     resources :sectors
     resources :ports

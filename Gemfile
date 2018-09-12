@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'webpacker'
+gem 'webpacker-react'
 gem 'dotenv-rails'
 gem 'graphql'
 gem 'mysql2' 
